@@ -1,27 +1,28 @@
 const { app, BrowserWindow } = require('electron')
 
-function createWindow () {
-  const win = new BrowserWindow({
-    width: 800,
-    height: 600,
-    webPreferences: {
-      nodeIntegration: true
-    }
-  })
+function createWindow() {
+   const win = new BrowserWindow({
+      frame: false,
+      width: 800,
+      height: 600,
+      webPreferences: {
+         nodeIntegration: true
+      }
+   })
 
-  win.loadURL('https://excalidraw.com')
+   win.loadURL('https://excalidraw.com')
 }
 
 app.whenReady().then(createWindow)
 
 app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
+   if (process.platform !== 'darwin') {
+      app.quit()
+   }
 })
 
 app.on('activate', () => {
-  if (BrowserWindow.getAllWindows().length === 0) {
-    createWindow()
-  }
+   if (BrowserWindow.getAllWindows().length === 0) {
+      createWindow()
+   }
 })
