@@ -28,6 +28,9 @@ This project packages the [Excalidraw](https://excalidraw.com/) web application 
 -  Install dependencies:
 
        npm install
+       npm install electron --save-dev
+       npm install -g electron-packager
+       
 
 -  Package the application for Linux:
 
